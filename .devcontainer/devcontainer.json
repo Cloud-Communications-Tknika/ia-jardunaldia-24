@@ -6,8 +6,10 @@
             "extensions": [
                 "GitHub.copilot",
                 "GitHub.copilot-chat",
-                "ritwickdey.LiveServer"
+                "ritwickdey.LiveServer",
+                "jebbs.plantuml"
             ]
         }
-    }
+    },
+    "postCreateCommand": "sudo apt update && sudo apt install openjdk-17-jdk openjdk-17-jre graphviz -y"
 }
