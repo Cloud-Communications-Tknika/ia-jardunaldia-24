@@ -1,0 +1,13 @@
+{
+    "name": "Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0.202.6",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "ritwickdey.LiveServer"
+            ]
+        }
+    }
+}
