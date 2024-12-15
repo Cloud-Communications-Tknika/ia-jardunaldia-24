@@ -1,4 +1,65 @@
-<%- include('layout') %>
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareTrip - Bidaiak Kontsultatu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ShareTrip</h1>
+        <nav>
+            <a href="#" class="active">Bidaiak kontsultatu</a>
+            <a href="#">Sartu</a>
+            <a href="#">Erregistratu</a>
+        </nav>
+    </header>
 
-<h1>Ongi etorri</h1>
-<p>Hau Express.js aplikazio sinple bat da.</p>
+    <main>
+        <section class="search-section">
+            <h2>Bidaiak Bilatu</h2>
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="origin">Jatorria:</label>
+                    <select id="origin" required>
+                        <option value="">Aukeratu hiria</option>
+                        <% hiriak.forEach(function(hiria) { %>
+                            <option value="<%= hiria.id %>"><%= hiria.izena %> (<%= hiria.probintzia %>)</option>
+                        <% }); %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Helmuga:</label>
+                    <select id="destination" required>
+                        <option value="">Aukeratu hiria</option>
+                        <% hiriak.forEach(function(hiria) { %>
+                            <option value="<%= hiria.id %>"><%= hiria.izena %> (<%= hiria.probintzia %>)</option>
+                        <% }); %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="seats">Eserleku kopurua:</label>
+                    <input type="number" id="seats" min="1" max="8" required>
+                </div>
+
+                <button type="submit">Bilatu</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <h2>Eskuragarri dauden bidaiak</h2>
+            <div id="searchResults"></div>
+        </section>
+    </main>
+
+    
+</body>
+</html>

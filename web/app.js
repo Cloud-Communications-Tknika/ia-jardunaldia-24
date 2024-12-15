@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const db = require('./db');  // Aldatu hau
 const app = express();
 
 // View engine setup
@@ -10,8 +11,17 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.get('/', function(req, res) {
-    res.render('index', { title: 'Main' , body: 'Main Edukia'});
+app.get('/', async (req, res) => {
+    try {
+        const hiriak = await db.getHiriak();  // Aldatu hau
+        res.render('index', { 
+            title: 'ShareTrip - Bidaiak Kontsultatu',
+            hiriak: hiriak
+        });
+    } catch (err) {
+        console.error('Error:', err);
+        res.status(500).send('Database error');
+    }
 });
 
 app.get('/about', (req, res) => {
