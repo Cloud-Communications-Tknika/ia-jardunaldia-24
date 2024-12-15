@@ -1,0 +1,82 @@
+@startuml ShareTrip-Domain
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+class Erabiltzailea {
+  -id: String
+  -izena: String
+  -abizena: String
+  -email: String
+  -telefonoa: String
+  -pasahitza: String
+}
+
+class Gidaria {
+  -gidaBaimena: String
+}
+
+class Bidaiaria {
+}
+
+class Hiria {
+  -id: String
+  -izena: String
+  -probintzia: String
+}
+
+class Bidaia {
+  -id: String
+  -data: Date
+  -plazaKopurua: Integer
+  -prezioaBidaiari: Double
+  -sortzeData: Date
+}
+
+class Erreserba {
+  -id: String
+  -plazaKopurua: Integer
+  -eskaeradata: Date
+  -egoera: EreserbaEgoera
+}
+
+class Mezua {
+  -id: String
+  -gaia: String
+  -edukia: String
+  -data: DateTime
+}
+
+class Alerta {
+  -id: String
+  -sortzeData: Date
+  -plazaKopurua: Integer
+  -bidaiaData: Date
+  -aktiboa: Boolean
+}
+
+enum EreserbaEgoera {
+  ESKATUTA
+  ONARTUTA
+  UKATUTA
+}
+
+' Erlazioak
+Erabiltzailea <|-- Gidaria
+Erabiltzailea <|-- Bidaiaria
+
+Bidaia "*" -- "1" Gidaria : eskaintzen du >
+Bidaia "*" -- "1" Hiria : jatorria >
+Bidaia "*" -- "1" Hiria : helmuga >
+
+Erreserba "*" -- "1" Bidaia
+Erreserba "*" -- "1" Bidaiaria : eskatzailea >
+
+Mezua "*" -- "1" Erabiltzailea : igorlea >
+Mezua "*" -- "1" Erabiltzailea : hartzailea >
+
+Alerta "*" -- "1" Bidaiaria
+Alerta "*" -- "1" Hiria : jatorria >
+Alerta "*" -- "1" Hiria : helmuga >
+
+@enduml

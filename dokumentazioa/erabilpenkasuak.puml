@@ -1,0 +1,56 @@
+@startuml ShareTrip
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Erabiltzaile Anonimoa" as EA
+actor "Gidaria" as G
+actor "Bidaiaria" as B
+actor "Sistema" as S
+
+rectangle ShareTrip {
+  usecase "Bidaiak kontsultatu" as UC1
+  usecase "Erregistratu" as UC2
+  usecase "Bidaiak sortu" as UC3
+  usecase "Hiri berriak sortu" as UC4
+  usecase "Erreserba eskaerak kudeatu" as UC5
+  usecase "Erreserba eskatu" as UC6
+  usecase "Alertak sortu" as UC7
+  usecase "Alertak kudeatu" as UC8
+  usecase "Mezuak bidali" as UC9
+  usecase "Mezuak kontsultatu" as UC10
+  usecase "Email jakinarazpenak bidali" as UC11
+  usecase "Erreserben egoera ikusi" as UC12
+}
+
+' Erabiltzaile Anonimoaren erabilpen kasuak
+EA --> UC1
+EA --> UC2
+
+' Gidariaren erabilpen kasuak
+G --> UC1
+G --> UC3
+G --> UC4
+G --> UC5
+G --> UC9
+G --> UC10
+G --> UC12
+
+' Bidaiariaren erabilpen kasuak
+B --> UC1
+B --> UC6
+B --> UC7
+B --> UC8
+B --> UC9
+B --> UC10
+B --> UC12
+
+' Sistemaren erabilpen kasuak
+S --> UC11
+
+' Hedapenak eta inklusio erlazioak
+UC6 ..> UC11 : <<include>>
+UC5 ..> UC11 : <<include>>
+UC3 ..> UC8 : <<include>>
+
+@enduml

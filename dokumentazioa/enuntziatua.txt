@@ -1,0 +1,23 @@
+ShareTrip: Autoa partekatzeko Sistema - Proiektuaren Hasiera
+
+Sarrera
+Pertsonen artean auto partekatze bat ahalbidetzen duen aplikazio bat sortu nahi dugu.
+Gidari batek bidaia bat eskaini nahi duenean, inprimaki bat betetzen du jatorri eta helmuga hiriak, data, eserleku kopurua eta bidaiari bakoitzeko prezioa adieraziz (adib. Bilbo-Donostia, 2024/04/04, 5€). Hiriak aurrez ezarrita daude, baina hiri bat existitzen ez bada, beti sor daiteke berri bat.
+
+
+Aplikazioaren edozein erabiltzailek kontsulta dezake bidaia eskaintza, jatorri eta helmuga hiriak, data eta eserleku kopurua adieraziz. Soilik eserleku nahiko dituzten bidaiak erakutsiko dira. Bidaia batekin erlazionatutako beste edozein eragiketa egiteko, sisteman erregistratu behar da.
+
+
+Erabiltzaile erregistratu batek (hemendik aurrera, bidaiaria), bidaia baterako erreserba eskatu dezake, eserleku kopurua adieraziz, nahi duenean edo bidaiak kontsultatzen ari denean.
+
+
+Une horretan, sistemak mezu elektroniko bat bidaliko dio bidaia horretako gidariari, erreserba eskaera bat dagoela adieraziz. Gidariak bere bidaiekin lotutako erreserba eskaerak kontsulta ditzake (eskatzailea, bidaia eta eserleku kopurua), eta egoki ikusiz gero, eskaera onartu edo ezeztatu. Bidaiariari automatikoki jakinaraziko zaio erabakia kasu bakoitzean mezu elektroniko bidez.
+
+
+Bidaiariek beren erreserben egoera kontsulta dezakete (eskaera data, bidaiak, eserleku kopurua, egoera (onartua/ukatua/zain)). Gidariak zuzenean onartu edo ezeztatu dezake erreserba eskaera, erreserba kodea adieraziz.
+
+
+Bidaiari batek bere beharretara egokitzen den bidaiarik aurkitzen ez badu, alerta bat sor dezake, jatorri eta helmuga hiriak, bidaiaren data eta eserleku kopurua adieraziz. Bidaia berri bat gehitzen den bakoitzean, sistemak posta bidez jakinaraziko die bidaia berriaren parametroekin bat datozen alertak dituzten bidaiariei. Edozein unetan, bidaiariek beren alertak kontsulta eta baja eman diezaiekete.
+
+
+Azkenik, bidaiariek mezuak bidali diezazkiekete gidariei, adibidez, bidaiari buruzko informazio gehigarria eskatuz, edo jasotzeko eskaera eginez. Gidariek ere erantzun diezaiekete mezuei. Bai bidaiariek bai gidariek bidali dituzten mezu guztiak ikusi ditzakete mezuaren hartzailearen informazioarekin, data, gaia eta mezuaren testuarekin, baita jasotakoak ere, mezuaren bidaltzailearen informazioarekin, data, gaia eta testuarekin.
